@@ -1,12 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BluePhyre", "BluePhyre\BluePhyre.csproj", "{91DBF8E3-5BC0-4CD9-9D70-840219E3B2FB}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{AAE5FA05-709D-4D05-A746-92200E0367A3}"
-	ProjectSection(SolutionItems) = preProject
-		DataBase\schema.sql = DataBase\schema.sql
-	EndProjectSection
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BluePhyre", "src\BluePhyre\BluePhyre.csproj", "{91DBF8E3-5BC0-4CD9-9D70-840219E3B2FB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
