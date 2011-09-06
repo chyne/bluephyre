@@ -37,8 +37,17 @@
     <Reference Include="Castle.Core">
       <HintPath>..\..\lib\Windsor\Castle.Core.dll</HintPath>
     </Reference>
+    <Reference Include="Castle.Facilities.Logging">
+      <HintPath>..\..\lib\Windsor\loggingFacility\Castle.Facilities.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Services.Logging.Log4netIntegration">
+      <HintPath>..\..\lib\Windsor\loggingFacility\Castle.Services.Logging.Log4netIntegration.dll</HintPath>
+    </Reference>
     <Reference Include="Castle.Windsor">
       <HintPath>..\..\lib\Windsor\Castle.Windsor.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\..\lib\Windsor\loggingFacility\log4net.dll</HintPath>
     </Reference>
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
@@ -73,6 +82,7 @@
     </Compile>
     <Compile Include="Infrastructure\WindsorControllerFactory.cs" />
     <Compile Include="Installers\ControllersInstaller.cs" />
+    <Compile Include="Installers\LoggingInstaller.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

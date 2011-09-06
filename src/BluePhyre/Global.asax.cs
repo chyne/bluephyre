@@ -1,11 +1,17 @@
 ﻿using System.Web.Mvc;
 using System.Web.Routing;
+using BluePhyre.Infrastructure;
+using Castle.Windsor;
+using Castle.Windsor.Installer;
 
 namespace BluePhyre
 {
 
     public class MvcApplication : System.Web.HttpApplication
     {
+
+        private static IWindsorContainer _container;
+
         private static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
             filters.Add(new HandleErrorAttribute());
@@ -29,6 +35,23 @@ namespace BluePhyre
 
             RegisterGlobalFilters(GlobalFilters.Filters);
             RegisterRoutes(RouteTable.Routes);
+
+            BootstrapContainer();
         }
+
+        protected void Application_End()
+        {
+
+            _container.Dispose();
+        }
+
+        private static void BootstrapContainer()
+        {
+            _container = new WindsorContainer()
+            .Install(FromAssembly.This());
+            var controllerFactory = new WindsorControllerFactory(_container.Kernel);
+            ControllerBuilder.Current.SetControllerFactory(controllerFactory);
+        }
+
     }
 }
